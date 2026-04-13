@@ -3,6 +3,7 @@
 *.tfstate
 *.tfstate.backup
 terraform.tfvars
+crash.log
 
 # AWS keys / secrets
 *.pem
@@ -27,3 +28,10 @@ node_modules/
 
 # Go build
 bin/
+*.exe
+*.test
+
+# Ansible
+ansible/inventory.ini
+*.retry
+
