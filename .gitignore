@@ -1,0 +1,29 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+terraform.tfvars
+
+# AWS keys / secrets
+*.pem
+*.key
+
+# Environment files
+.env
+
+# Docker
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Node (if added later)
+node_modules/
+
+# Go build
+bin/

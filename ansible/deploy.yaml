@@ -1,0 +1,27 @@
+- name: Deploy Notes API
+  hosts: servers
+  become: true
+
+  tasks:
+    - name: Install Docker
+      yum:
+        name: docker
+        state: present
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Add ec2-user to docker group
+      user:
+        name: ec2-user
+        groups: docker
+        append: yes
+
+    - name: Pull Docker image
+      command: docker pull vedantjais04/notes-api
+
+    - name: Run container
+      command: docker run -d -p 80:8080 vedantjais04/notes-api
